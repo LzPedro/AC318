@@ -1,0 +1,30 @@
+.divlogin{
+    border:2px solid rgba(0, 0, 255, 0.7);
+    flex-direction: column;
+    display: flex;
+    width: 30%;
+    min-width: 200px;
+    text-align:center;
+    position: absolute;
+    top: 20%;
+    margin-top: -25px;
+    left: 43%;
+    margin-left: -100px;
+
+}
+.nameLogin{
+    text-align: center;
+    padding: 20px;
+}
+.link{
+    text-align: center;
+}
+.btnLogin{
+    background: rgb(72, 72, 252);
+    color: whitesmoke;
+    width: 130px;
+}
+h1{
+    text-align: center;
+    color: rgb(72, 72, 252)!important;
+}
