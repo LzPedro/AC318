@@ -9,33 +9,61 @@ var bodyParser  = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var login = function(req,res){
-    var connection = mysql.createConnection(db.dbData);
-    var data = req.body;
-    connection.connect(function(err) {
-        if (err) {
-            console.log(err);
-            res.sendStatus(500);
-        }
-        else {
-            console.log("Connected!");
-            var query = "SELECT * FROM Usuario WHERE name = ? and password= ?";
-            connection.query(query, [data.name,data.password], function (err, result, fields) {
-                if (err) {
-                    console.log(err);
-                    res.sendStatus(500);
-                } else {
-                    console.log(result);
-                    res.send(200);
-                }
-            });
-            connection.end();
-        }
-    });
-}
+   
+
 
 module.exports = {
+
+    login2: function(req,res){
+        var connection = mysql.createConnection(db.dbData);
+        var data = req.body;
+        connection.connect(function(err) {
+            if (err) {
+                console.log(err);
+                res.sendStatus(500);
+            }
+            else {
+                console.log("Connected!");
+                var query = "SELECT * FROM Usuario WHERE name = ? and password= ?";
+                connection.query(query, [data.name,data.password], function (err, result, fields) {
+                    if (err) {
+                        console.log(err);
+                        res.sendStatus(500);
+                    } else {
+                        console.log(result);
+                        res.send(200);
+                    }
+                });
+                connection.end();
+            }
+        });
+    }
     login: login,
+    deleteUsuarioById : function(req, res){
+        var connection = mysql.createConnection(db.dbData);
+    
+        var id = req.params.id;
+        connection.connect(function(err) {
+            if (err) {
+                console.log(err);
+                res.sendStatus(500);
+            }
+            else {
+                console.log("Connected!");
+                var query = "DELETE FROM usuario WHERE id = ?";
+                connection.query(query, [id], function (err, result, fields) {
+                    if (err) {
+                        console.log(err);
+                        res.sendStatus(500);
+                    } else {
+                        console.log(result);
+                        res.send(result);
+                    }
+                });
+                connection.end();
+            }
+        });
+    },
     getUsuarioById : function(req, res){
         var connection = mysql.createConnection(db.dbData);
 

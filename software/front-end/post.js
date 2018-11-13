@@ -27,8 +27,7 @@ btnEnviar.onclick = function () {
                 newCell0.innerHTML = res[i].id;
                 var newCell1 = newRow.insertCell();
                 newCell1.innerHTML = res[i].name;
-                var newCell2 = newRow.insertCell();
-                newCell2.innerHTML = res[i].email;
+        
                 var newCell3 = newRow.insertCell();
 
                 newCell3.innerHTML = `<img class="icons" id=`+res[i].id+` onclick="editItem(this.id)"
@@ -43,7 +42,7 @@ btnEnviar.onclick = function () {
         //POST
         console.log(userJson.value)
         let user = userJson.value
-        $.post(urlInput.value, {
+       /* $.post(urlInput.value, {
             email: "qasdeajjjz@tenorio.com.br",
             password: "1234ss56",
             name: "carolinasde2002"
@@ -52,9 +51,27 @@ btnEnviar.onclick = function () {
             console.log(res);
             /* if (res == "OK" ){
                  window.location.href='./post.html'
-             }*/
+             }
         });
-    }
+}*/
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/usuario/",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer bd238370-ac5a-4dde-a229-fe063172c44b",
+      "Cache-Control": "no-cache",
+      "Postman-Token": "0508ba3d-be80-4beb-81d3-5f147dd203dd"
+    },
+    "processData": false,
+    "data": userJson.value
+  }
+}
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
 }
 
 
@@ -77,10 +94,24 @@ function deleteItem(i) {
      */
    // alert(event.srcElement.id);
     console.log(i)
-    let id = toStrii.ng()
-    $.delete('http://localhost:8000/historico/'+ i).done(function (res) {
-        
-        console.log(res);
-    });
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": 'http://localhost:8000/historico/' +i,
+        "method": "DELETE",
+        "headers": {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer bd238370-ac5a-4dde-a229-fe063172c44b",
+          "Cache-Control": "no-cache",
+          "Postman-Token": "a969941d-3427-4493-9525-ecf3f060314d"
+        },
+        "processData": false,
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+   
+   
     console.log("clicou no lixo")
 }

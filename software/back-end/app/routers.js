@@ -16,7 +16,8 @@ router.route('/usuario/:id').get(usuario.getUsuarioById);
 router.route('/usuario').get(usuario.getAllUsuarios);
 router.route('/usuario').post(usuario.saveUsuario);
 router.route('/usuario').put(usuario.updateUsuario);
-router.route('/usuarioLogin').post(usuario.login);
+router.route('/usuarioLogin').post(usuario.login2);
+router.route('/usuario/:id').removeData(usuario.deleteUsuarioById);
 
 //historico
 router.route('/historico/:id').get(historico.getHistoricoById);

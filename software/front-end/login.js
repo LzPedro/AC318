@@ -17,6 +17,7 @@ log.onclick = function(){
           $.post( "http://localhost:8000/usuarioLogin", user ).done(function(res){
             console.log(res);
             if (res == "OK" ){
+
                 window.location.href='./post.html'
             }
             });
