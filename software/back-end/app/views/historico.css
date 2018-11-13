@@ -1,0 +1,35 @@
+.icons{
+
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+table{
+    background: rgb(243, 238, 238);
+    border: 2px solid blue;
+    min-width: 500px;
+}
+th{
+    background-color: rgb(196, 194, 194);
+    text-align: center;
+    border-left:1px solid rgba(0, 0, 255, 0.7);
+}
+
+td{
+    background-color: rgb(243, 239, 239);
+    text-align: center;
+    border-left:1px solid rgba(0, 0, 255, 0.7);
+}
+#back{
+    background: rgb(72, 72, 252);
+    color: whitesmoke;
+}
+h1{
+    padding-top: 20px;
+    text-align: center;
+    color: rgb(72, 72, 252);
+}
+img{
+    color: rgb(72, 72, 252);
+}

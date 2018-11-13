@@ -70,7 +70,7 @@ module.exports = {
             }
             else {
                 console.log("Connected!");
-                var query = "DELETE FROM Historico WHERE id = ?";
+                var query = "DELETE FROM usuario WHERE id = ?";
                 connection.query(query, [id], function (err, result, fields) {
                     if (err) {
                         console.log(err);

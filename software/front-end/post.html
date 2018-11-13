@@ -17,30 +17,61 @@
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Selecione a opção
                 <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu">
+            <select id="cb_catinsumo">
+                <option value="1">POST</option>
+                <option value="2" selected="selected">GET</option>
+            </select>
+            <!--ul class="dropdown-menu" (click)="getValue()">
                 <li>
-                    <a href="#">GET</a>
+                    <a href="#" id="getV">GET</a>
                 </li>
                 <li>
-                    <a href="#">POST</a>
+                    <a href="#" id="postV">POST</a>
                 </li>
-            </ul>
+            </ul-->
         </div>
         <div class="inputurl">
-            <input type="url">
+            <input type="url" id="urlInput">
         </div>
         <div style="padding-left: 20px;">
-                <input type="submit" class="btn btnEnviar" value="ENVAR" onclick="getChosenFunction()" id="env">
-            </div>
+            <input type="submit" class="btn btnEnviar" value="ENVAR" onclick="getChosenFunction()" id="env">
+        </div>
     </div>
 
-<div class="contentAll">
-        <textarea class="contentText"></textarea>
-</div>
+    <div class="contentAll">
+        <textarea class="contentText" id="userJson"></textarea>
+    </div>
+
+
+    <h1>Historico</h1>
+    <div style="padding:20px;">
+        <table id="tabela">
+            <tr>
+                <th style="width:45%;">
+                    Nome
+                </th>
+                <th style="width:45%;">
+                    Email
+                </th>
+                <th style="width:7%;">
+                    Editar
+                </th>
+                <th style="width:7%;">
+                    Deletar
+                </th>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </div>
+    <div style="padding:20px;">
+        <button type="submit" class="btn" onclick="window.location.href='./post.html'" id="back">INICIO</button>
+    </div>
+
 
     <!-- Javascript -->
     <script src="./post.js"></script>
-    
+
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
 
